@@ -20,7 +20,7 @@ module.exports = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-            plugins: ["@babel/plugin-proposal-optional-chaining"],
+            plugins: ["@babel/plugin-proposal-class-properties"],
             exclude: /node_modules/,
           }, // if we were using React.js, we would include "react"
         },
@@ -67,5 +67,5 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
     require("autoprefixer"),
-  ],
+  ]
 };

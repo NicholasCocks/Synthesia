@@ -1,6 +1,5 @@
-import { fft } from './sampler';
-
-export default class Visualizer {
+import { synth } from './sampler';
+class Visualizer {
   constructor() {
     this.samples = document.querySelector('#samples');
     this.sampleValue = this.samples.options[this.samples.selectedIndex].value;
@@ -19,7 +18,7 @@ export default class Visualizer {
   drawVisualizer() {
     requestAnimationFrame(this.drawVisualizer);
 
-    const dataArray = fft.getValue();
+    const dataArray = synth.fft.getValue();
     const width = this.visualizer.width;
     const height = this.visualizer.height;
     const barWidth = width / this.sampleValue;
@@ -43,3 +42,5 @@ export default class Visualizer {
     this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
   }
 }
+
+export const visualizer = new Visualizer();

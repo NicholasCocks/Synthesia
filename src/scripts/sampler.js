@@ -1,43 +1,49 @@
 import * as Tone from 'tone';
 
-const sampler = new Tone.Sampler({
-  urls: {
-      A1: "A1.mp3",
-      A2: "A2.mp3",
-  },
-  baseUrl: "https://tonejs.github.io/audio/casio/"
-})
+class Synth {
+  constructor() {
+    this.sampler = new Tone.Sampler({
+      urls: {
+        A1: "A1.mp3",
+        A2: "A2.mp3",
+      },
+      baseUrl: "https://tonejs.github.io/audio/casio/"
+    });
 
-export const fft = new Tone.Analyser({size: 512, smoothing: 0.8})
+    this.fft = new Tone.Analyser({ size: 512, smoothing: 0.8 });
 
-const gainNode3 = new Tone.Gain(0.1).toDestination()
-const reverb = new Tone.JCReverb({decay: 7})
-const delay = new Tone.PingPongDelay({delayTime: 0.25, maxDelayTime: 1})
+    this.gainNode3 = new Tone.Gain(0.1).toDestination();
+    this.reverb = new Tone.JCReverb({ decay: 7 });
+    this.delay = new Tone.PingPongDelay({ delayTime: 0.25, maxDelayTime: 1 });
 
-sampler.connect(gainNode3)
-sampler.connect(delay)
-sampler.connect(reverb)
-sampler.connect(fft)
-delay.connect(gainNode3)
-reverb.connect(gainNode3)
+    this.sampler.connect(this.gainNode3);
+    this.sampler.connect(this.delay);
+    this.sampler.connect(this.reverb);
+    this.sampler.connect(this.fft);
+    this.delay.connect(this.gainNode3);
+    this.reverb.connect(this.gainNode3);
+  }
 
-export const triggerNote = (mouse) => {
-  const now = Tone.now() // gets the current time of the AudioContext.
-  sampler.triggerAttackRelease(findClosestNote(mouse.y - 20, NOTES), now + 0.5);
-}
+  triggerNote = (mouse) => {
+    const now = Tone.now();
+    this.sampler.triggerAttackRelease(this.findClosestNote(mouse.y - 20, NOTES), now + 0.5);
+  }
 
-const findClosestNote = (needle, haystack) => {
-  return haystack.reduce((a, b) => {
+  findClosestNote = (needle, haystack) => {
+    return haystack.reduce((a, b) => {
       let aDiff = Math.abs(a - Math.abs(needle));
       let bDiff = Math.abs(b - Math.abs(needle));
 
       if (aDiff == bDiff) {
-          return a > b ? a : b;
+        return a > b ? a : b;
       } else {
-          return bDiff < aDiff ? b : a;
+        return bDiff < aDiff ? b : a;
       }
-  });
+    });
+  }
 }
+
+export const synth = new Synth();
 
 const NOTES = [
   20.60172,
@@ -86,4 +92,4 @@ const NOTES = [
   1396.913,
   1567.982,
   1760.000,
-]
+];

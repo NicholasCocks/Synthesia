@@ -12,3 +12,7 @@
 ## What else to talk about?
 1. Debouncing pattern (comes from eletrical engineering)
 2. requestAnimationFrame for performance
+
+## What is it missing?
+1. Tests
+2. Mobile support

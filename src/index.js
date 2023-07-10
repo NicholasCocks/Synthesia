@@ -1,6 +1,6 @@
 import './scripts/about_tab';
-import { triggerNote } from './scripts/sampler';
-import Visualizer from './scripts/visualizer';
+import { synth } from './scripts/sampler';
+import { visualizer } from './scripts/visualizer';
 import Brush from './scripts/brush';
 
 let drawing = false;
@@ -28,7 +28,6 @@ ctx.lineJoin = 'round';
 ctx.shadowBlur = 3;
 
 // My Classes
-const visualizer = new Visualizer();
 const brush = new Brush(ctx, size);
 
 const fillLine = () => {
@@ -83,7 +82,7 @@ const draw = (e) => {
 
   if (debounce === 4) {
     debounce = 0;
-    triggerNote(mouse);
+    synth.triggerNote(mouse);
   }
 
   if (drawingPoints.length < 6) {
@@ -97,6 +96,7 @@ const draw = (e) => {
 visualizer.resizeVisualizer();
 visualizer.drawVisualizer();
 
+// Event handlers
 canvas.addEventListener('mousedown', startDraw);
 canvas.addEventListener('mouseup', finishDraw);
 canvas.addEventListener('mousemove', draw);
