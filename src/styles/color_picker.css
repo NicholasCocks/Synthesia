@@ -1,0 +1,66 @@
+#color_picker_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  position: absolute;
+  right: 7px;
+  top: 20%;
+}
+
+.radio_container {
+  position: relative;
+  padding-left: 7px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radio_container input:checked ~ .checkmark {
+  transition: all .2s ease-in-out;
+  transform: scale(1.25);
+  border: 1px solid gray;
+}
+
+.checkmark:hover {
+  background-color: #c4c4c4;
+} 
+
+.radio {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+#default_span {
+  background-image: linear-gradient(to right,  hsl(239, 59%, 33%), hsl(0, 57%, 40%));
+}
+
+#brush2_span {
+  background-image: linear-gradient(to right, hsl(143, 57%, 40%) , hsl(7, 59%, 33%));
+}
+
+#brush3_span {
+  background-image: linear-gradient(to right,  hsl(155, 42%, 42%), hsl(226, 59%, 33%));
+}
+
+#brush4_span {
+  background-image: linear-gradient(to right,  hsl(12, 57%, 40%), hsl(54, 59%, 33%));
+}
+
+#brush5_span {
+  background-image: linear-gradient(to right,  orange, purple, blue);
+}

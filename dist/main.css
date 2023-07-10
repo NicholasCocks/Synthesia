@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import "../src/styles/index.css";
+
+
+/* General styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+/* Core styles */
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-justify-between {
+  justify-content: space-between;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.font-reenie-beanie {
+  font-family: 'Reenie Beanie', cursive;
+}
+
+.font-size-small {
+  font-size: small;
+}
+
+.font-size-medium {
+  font-size: medium;
+}
+
+.font-size-large {
+  font-size: large;
+}
+
+.font-weight-100 {
+  font-weight: 100;
+}
+
+.font-weight-400 {
+  font-weight: 400;
+}
+
+.font-weight-550 {
+  font-weight: 550;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Inactive state */
+
+.inactive {
+  display: none;
+}
+
+/* Control line styles */
+
+.control_line {
+  justify-content: space-between;
+}
+
+/* Page container styles */
+
+#page_container {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  justify-content: center;
+  z-index: -2;
+}
+
+/* Canvas styles */
+
+#canvas {
+  border: 2px solid black;
+}
+
+/* Visualizer styles */
+
+.visualizer {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+}
+
+/* About tab styles */
+
+.about_icon:hover {
+  color: #e07800;
+}
+
+.about_tab {
+  flex-wrap: wrap;
+  width: 16%;
+  min-width: 120px;
+  height: 75vh;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: rgb(230, 230, 230);
+  z-index: 5;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 45px;
+  right: 7px;
+}
+
+.about_tab p {
+  margin: 2px;
+}
+
+.about_tab h3 {
+  margin: 7px;
+}
+
+.about_icon {
+  top: 7px;
+  right: 7px;
+}
+
+.about_icon:hover {
+  color: rgb(224, 120, 0);
+}
+
+.active_icon {
+  color: rgb(224, 120, 0);
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import './equation.css';
+@import './color_picker.css';
+@import './about_tab.css';
+
+/* App-specific styles */
+
+.app_title {
+    top: 7px;
+    left: 7px;
+  }
+  
+  #author {
+    font-family: 'Reenie Beanie', cursive;
+    bottom: 7px;
+    right: 7px;
+    color: black;
+    p {
+        margin: 0;
+        margin-right: 7px;
+    }
+    a {
+        color: black;
+    }
+    a:hover {
+        color: rgb(224, 120, 0);
+    }
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #visualizer {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .app-title {
+    top: 7px;
+    left: 7px;
+    font-family: 'Reenie Beanie', cursive;
+    font-weight: 100;
+    font-size: 40px;
+  }
+  
+  
+

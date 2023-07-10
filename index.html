@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="src/images/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="./dist/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+
+    <meta property="og:title" content="Synthesthesia" />
+    <meta property="og:image" content="dist\images\synthesthesia.gif" />
+    <meta
+      property="og:description"
+      content="A deep dive into the Fast Fourier Transform (FFT) through the use of a spectrum analyzer and an interactive, fun and meditative drawing app."
+    />
+    <meta
+      property="og:url"
+      content="https://nicholascocks.github.io/Synthesthesia/"
+    />
+
+    <title>Synthesthesia</title>
+  </head>
+
+  <body>
+    <div id="page_container" class="flex-container flex-align-center">
+
+      <h1 class="app-title position-absolute font-size-large margin-0">Synthesthesia</h1>
+      <canvas id="canvas"></canvas>
+      <canvas id="visualizer" class="position-absolute visualizer position-absolute"></canvas>
+
+      <div id="equation_container" class="position-absolute flex-container font-size-small">
+        <p>F<sub>
+          <select id="samples">
+            <option value="512">512</option>
+            <option value="256" selected>256</option>
+            <option value="128">128</option>
+            <option value="64">64</option>
+          </select>
+        </sub> =</p>
+        <p>
+          <span>&Sigma;</span>  
+        </p>
+        <p>x<sub>n</sub>* e <div>- j2π<aside id="ksamples">256</aside>n</div></p>
+      </div>
+
+      <div id="color_picker_container">
+        <label for="default" class="radio_container">
+        <input type="radio" name="color" id="default" value="default" class="radio" checked="checked"/>
+        <span class="checkmark" id="default_span"></span></label>
+
+        <label for="brush2" class="radio_container">
+        <input type="radio" name="color" id="brush2" value="brush2" class="radio" />
+        <span class="checkmark" id="brush2_span"></span></label>
+
+        <label for="brush3" class="radio_container">
+        <input type="radio" name="color" id="brush3" value="brush3" class="radio" />
+        <span class="checkmark" id="brush3_span"></span></label>
+
+        <label for="brush4" class="radio_container">
+          <input type="radio" name="color" id="brush4" value="brush4" class="radio" />
+          <span class="checkmark" id="brush4_span"></span></label>
+
+        <label for="brush5" class="radio_container">
+          <input type="radio" name="color" id="brush5" value="brush5" class="radio" />
+          <span class="checkmark" id="brush5_span"></span></label>
+      </div>
+
+      <span class="about_icon font-size-large position-absolute">
+        <i class="fas fa-question-circle active_icon"></i>
+      </span>
+      <div class="about_tab position-absolute flex-container flex-column inactive font-size-medium font-weight-400">
+        <p><i>Please use headphones and a mouse for best experience.</i></p>
+        <h3 class="font-reenie-beanie">Controls</h3>
+        <div class="flex-container flex-justify-between">
+          <p class="font-size-small">Left Click:</p>
+          <p class="font-size-small">Draw.</p>
+        </div>
+        <div class="flex-container flex-justify-between">
+          <p class="font-size-small">Right Click:</p>
+          <p class="font-size-small">Erase board.</p>
+        </div>
+        <h3 class="flex-container font-reenie-beanie">About the project</h3>
+        <div class="flex-justify-between flex-container">
+          <p class="font-size-small">The Fast Fourier Transform (FFT) which you can see at the bottom left of the screen is an algorithm that converts a signal from its 'original domain' to a representation in the frequency domain. This algorithm is used in everything from image and audio compression to the frequency analyzer you see when you sketch. This implementation allows you to adjust the number of discrete data points and therefore the width of the bars.</p>
+        </div>
+      </div>
+      <div id="author" class="position-absolute flex-align-center flex-container font-size-large font-weight-550">
+        <p>by</p>
+        <a href="https://github.com/NickDjukic/" class="font-weight-550">Nicholas Cocks</a>
+      </div>
+    </div>
+
+
+    <script src="./dist/main.js"></script>
+  </body>
+</html>
