@@ -3,8 +3,6 @@ import { synth } from './scripts/sampler';
 import { visualizer } from './scripts/visualizer';
 import Brush from './scripts/brush';
 
-addEventListener("DOMContentLoaded", (event) => {});
-
 let drawing = false;
 let debounce = 0;
 let drawingPoints = [];
@@ -95,7 +93,7 @@ const draw = (e) => {
   fillQuadraticLine();
 };
 
-visualizer.resizeVisualizer();
+// visualizer.resizeVisualizer();
 visualizer.drawVisualizer();
 
 // Event handlers

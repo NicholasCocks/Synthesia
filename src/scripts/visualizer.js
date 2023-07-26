@@ -7,7 +7,7 @@ class Visualizer {
 
     this.setVisualizerScale = this.setVisualizerScale.bind(this);
     this.drawVisualizer = this.drawVisualizer.bind(this);
-    this.resizeVisualizer = this.resizeVisualizer.bind(this);
+    // this.resizeVisualizer = this.resizeVisualizer.bind(this);
   }
 
   setVisualizerScale() {
@@ -37,12 +37,12 @@ class Visualizer {
     });
   }
 
-  resizeVisualizer() {
-    if (this.visualizer != null) {
-      this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
-      this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
-    }
-  }
+  // resizeVisualizer() {
+  //   if (this.visualizer != null) {
+  //     this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
+  //     this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
+  //   }
+  // }
 }
 
 export const visualizer = new Visualizer();
