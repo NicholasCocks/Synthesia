@@ -1,9 +1,9 @@
 import { synth } from './sampler';
 class Visualizer {
   constructor() {
-    this.samples = document.querySelector('#samples');
+    this.samples = document.getElementById('samples');
     this.sampleValue = this.samples.options[this.samples.selectedIndex].value;
-    this.visualizer = document.querySelector('#visualizer');
+    this.visualizer = document.getElementById('visualizer');
 
     this.setVisualizerScale = this.setVisualizerScale.bind(this);
     this.drawVisualizer = this.drawVisualizer.bind(this);
@@ -38,6 +38,7 @@ class Visualizer {
   }
 
   resizeVisualizer() {
+    debugger
     this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
     this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
   }
