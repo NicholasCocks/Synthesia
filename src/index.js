@@ -95,10 +95,8 @@ const draw = (e) => {
   fillQuadraticLine();
 };
 
-if (visualizer.visualizer != null) {
-  visualizer.resizeVisualizer();
-  visualizer.drawVisualizer();
-}
+visualizer.resizeVisualizer();
+visualizer.drawVisualizer();
 
 // Event handlers
 canvas.addEventListener('mousedown', startDraw);

@@ -38,8 +38,10 @@ class Visualizer {
   }
 
   resizeVisualizer() {
-    this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
-    this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
+    if (this.visualizer != null) {
+      this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
+      this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
+    }
   }
 }
 
