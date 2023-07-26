@@ -38,7 +38,6 @@ class Visualizer {
   }
 
   resizeVisualizer() {
-    debugger
     this.visualizer.width = this.visualizer.clientWidth * window.devicePixelRatio;
     this.visualizer.height = this.visualizer.clientHeight * window.devicePixelRatio;
   }
